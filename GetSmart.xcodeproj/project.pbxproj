@@ -23,6 +23,7 @@
 		1F8923AF2079647D00487E88 /* TriviaDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8923AE2079647D00487E88 /* TriviaDataSource.swift */; };
 		1F8923B12079653E00487E88 /* QuestionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8923B02079653E00487E88 /* QuestionDataSource.swift */; };
 		1F8923B42079677200487E88 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8923B32079677200487E88 /* QuestionManager.swift */; };
+		481BFEFEBD18F4658FA48D0D /* Pods_GetSmart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36DA40038A40025AAC4F3E1 /* Pods_GetSmart.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,9 @@
 		1F8923AE2079647D00487E88 /* TriviaDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaDataSource.swift; sourceTree = "<group>"; };
 		1F8923B02079653E00487E88 /* QuestionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataSource.swift; sourceTree = "<group>"; };
 		1F8923B32079677200487E88 /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
+		26F42C335BFA87D495A16B2D /* Pods-GetSmart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetSmart.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetSmart/Pods-GetSmart.release.xcconfig"; sourceTree = "<group>"; };
+		969FF6AF87EA9FB3FEC09112 /* Pods-GetSmart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetSmart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetSmart/Pods-GetSmart.debug.xcconfig"; sourceTree = "<group>"; };
+		B36DA40038A40025AAC4F3E1 /* Pods_GetSmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetSmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				481BFEFEBD18F4658FA48D0D /* Pods_GetSmart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +104,8 @@
 				1F8923812079435F00487E88 /* GetSmartTests */,
 				1F89238C2079435F00487E88 /* GetSmartUITests */,
 				1F89236B2079435A00487E88 /* Products */,
+				B7D3D7637BF67C0854A2A2D1 /* Pods */,
+				CDD143C46A862DDD83B9F1C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -216,6 +223,23 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		B7D3D7637BF67C0854A2A2D1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				969FF6AF87EA9FB3FEC09112 /* Pods-GetSmart.debug.xcconfig */,
+				26F42C335BFA87D495A16B2D /* Pods-GetSmart.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CDD143C46A862DDD83B9F1C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B36DA40038A40025AAC4F3E1 /* Pods_GetSmart.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,9 +247,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F8923922079435F00487E88 /* Build configuration list for PBXNativeTarget "GetSmart" */;
 			buildPhases = (
+				38ED2C8C26B792412A6F212F /* [CP] Check Pods Manifest.lock */,
 				1F8923662079435A00487E88 /* Sources */,
 				1F8923672079435A00487E88 /* Frameworks */,
 				1F8923682079435A00487E88 /* Resources */,
+				F880E53129061F2F1A6E1E5D /* [CP] Embed Pods Frameworks */,
+				AA52FEE7D759A93BBFEEB9FE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -341,6 +368,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		38ED2C8C26B792412A6F212F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GetSmart-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA52FEE7D759A93BBFEEB9FE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GetSmart/Pods-GetSmart-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F880E53129061F2F1A6E1E5D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GetSmart/Pods-GetSmart-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GetSmart/Pods-GetSmart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F8923662079435A00487E88 /* Sources */ = {
@@ -528,15 +609,13 @@
 		};
 		1F8923932079435F00487E88 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 969FF6AF87EA9FB3FEC09112 /* Pods-GetSmart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDP24D6J8J;
 				INFOPLIST_FILE = GetSmart/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.small.jeff.GetSmart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -546,15 +625,13 @@
 		};
 		1F8923942079435F00487E88 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26F42C335BFA87D495A16B2D /* Pods-GetSmart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDP24D6J8J;
 				INFOPLIST_FILE = GetSmart/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.small.jeff.GetSmart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -570,11 +647,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDP24D6J8J;
 				INFOPLIST_FILE = GetSmartTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.small.jeff.GetSmartTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -591,11 +664,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDP24D6J8J;
 				INFOPLIST_FILE = GetSmartTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.small.jeff.GetSmartTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -611,11 +680,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDP24D6J8J;
 				INFOPLIST_FILE = GetSmartUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.small.jeff.GetSmartUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -631,11 +696,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDP24D6J8J;
 				INFOPLIST_FILE = GetSmartUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.small.jeff.GetSmartUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
