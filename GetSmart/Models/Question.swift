@@ -6,7 +6,7 @@
 //  Copyright © 2018 Jeff Small. All rights reserved.
 //
 
-struct Question {
+struct Question: Equatable {
     let question: String
     let answers: [Answer]
 
@@ -18,5 +18,9 @@ struct Question {
 
         self.question = question
         self.answers = tempAnswers
+    }
+
+    static func == (lhs: Question, rhs: Question) -> Bool {
+        return lhs.question == rhs.question
     }
 }

@@ -20,6 +20,9 @@
 		1F8923A52079509800487E88 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8923A42079509800487E88 /* Colors.swift */; };
 		1F8923A82079602600487E88 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8923A72079602600487E88 /* QuestionViewController.swift */; };
 		1F8923AA2079604A00487E88 /* GameResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8923A92079604A00487E88 /* GameResultsViewController.swift */; };
+		1F8923AF2079647D00487E88 /* TriviaDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8923AE2079647D00487E88 /* TriviaDataSource.swift */; };
+		1F8923B12079653E00487E88 /* QuestionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8923B02079653E00487E88 /* QuestionDataSource.swift */; };
+		1F8923B42079677200487E88 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8923B32079677200487E88 /* QuestionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		1F8923A42079509800487E88 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1F8923A72079602600487E88 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		1F8923A92079604A00487E88 /* GameResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultsViewController.swift; sourceTree = "<group>"; };
+		1F8923AE2079647D00487E88 /* TriviaDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaDataSource.swift; sourceTree = "<group>"; };
+		1F8923B02079653E00487E88 /* QuestionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataSource.swift; sourceTree = "<group>"; };
+		1F8923B32079677200487E88 /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,10 +115,13 @@
 		1F89236C2079435A00487E88 /* GetSmart */ = {
 			isa = PBXGroup;
 			children = (
+				1F8923A32079508E00487E88 /* Constants */,
+				1F8923AD2079644B00487E88 /* DataSources */,
+				1F8923B22079676200487E88 /* Managers */,
+				1F89239E20794E8500487E88 /* Models */,
+				1F8923AC2079640B00487E88 /* Networking */,
 				1F8923AB207961EC00487E88 /* Storyboards */,
 				1F8923A620795FFB00487E88 /* ViewControllers */,
-				1F8923A32079508E00487E88 /* Constants */,
-				1F89239E20794E8500487E88 /* Models */,
 				1F89239B20794CEA00487E88 /* Views */,
 				1F89236D2079435A00487E88 /* AppDelegate.swift */,
 				1F8923742079435E00487E88 /* Assets.xcassets */,
@@ -181,6 +190,30 @@
 				1F8923712079435A00487E88 /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		1F8923AC2079640B00487E88 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1F8923AD2079644B00487E88 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				1F8923AE2079647D00487E88 /* TriviaDataSource.swift */,
+				1F8923B02079653E00487E88 /* QuestionDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		1F8923B22079676200487E88 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1F8923B32079677200487E88 /* QuestionManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F8923AF2079647D00487E88 /* TriviaDataSource.swift in Sources */,
 				1F8923A220794F1700487E88 /* Question.swift in Sources */,
 				1F8923A52079509800487E88 /* Colors.swift in Sources */,
 				1F8923A82079602600487E88 /* QuestionViewController.swift in Sources */,
@@ -321,6 +355,8 @@
 				1F89239D20794D0800487E88 /* AnswerCollectionViewCell.swift in Sources */,
 				1F8923AA2079604A00487E88 /* GameResultsViewController.swift in Sources */,
 				1F89236E2079435A00487E88 /* AppDelegate.swift in Sources */,
+				1F8923B12079653E00487E88 /* QuestionDataSource.swift in Sources */,
+				1F8923B42079677200487E88 /* QuestionManager.swift in Sources */,
 				1F8923A020794E9A00487E88 /* Answer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
