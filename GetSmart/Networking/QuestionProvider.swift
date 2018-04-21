@@ -51,8 +51,6 @@ class QuestionProvider {
                 let stringJSON = try? JSONDecoder().decode(String.self, from: stringData ?? Data())
                 let correctAnswerMapped = Answer(text: correctAnswer, isCorrect: true)
                 let incorrectAnswersMapped = incorrectAnswers.map { Answer(text: $0, isCorrect: false) }
-                print("Correct answer: \(correctAnswerMapped)")
-                print("Incorrect answers: \(incorrectAnswersMapped)")
 
                 let newQuestion = Question(
                     prompt: stringJSON ?? prompt, category: category,

@@ -59,7 +59,7 @@ class QuestionViewController: UIViewController, UICollectionViewDataSource, UICo
 
     @IBAction func didTapNextQuestion(_ sender: Any) {
         guard let questionManager = questionManager, let question = question, let answer = selectedAnswer else {
-//            assertionFailure("Something went wrong.")
+            assertionFailure("Something went wrong.")
             return
         }
         questionManager.answerQuestion(question, answer: answer)
