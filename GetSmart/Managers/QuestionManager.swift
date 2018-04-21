@@ -7,8 +7,9 @@
 //
 
 class QuestionManager {
-    var dataSource: TriviaDataSource?
     var correctAnswersCount = 0
+    var currentIndex = 0
+    var dataSource: TriviaDataSource?
 
     lazy var totalQuestions: Int = {
         return dataSource?.numberOfQuestions() ?? 0
@@ -22,6 +23,10 @@ class QuestionManager {
     }
 
     func answerQuestion(_ question: Question, answer: Answer) {
+        defer {
+            currentIndex += 1
+        }
+
         guard let dataSource = dataSource, answer.text == dataSource.correctAnswer(for: question)?.text else {
             return
         }
