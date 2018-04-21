@@ -23,6 +23,7 @@
 		1F8923AF2079647D00487E88 /* TriviaDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8923AE2079647D00487E88 /* TriviaDataSource.swift */; };
 		1F8923B12079653E00487E88 /* QuestionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8923B02079653E00487E88 /* QuestionDataSource.swift */; };
 		1F8923B42079677200487E88 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8923B32079677200487E88 /* QuestionManager.swift */; };
+		1F8923B620796C9700487E88 /* QuestionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8923B520796C9700487E88 /* QuestionProvider.swift */; };
 		481BFEFEBD18F4658FA48D0D /* Pods_GetSmart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36DA40038A40025AAC4F3E1 /* Pods_GetSmart.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		1F8923AE2079647D00487E88 /* TriviaDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaDataSource.swift; sourceTree = "<group>"; };
 		1F8923B02079653E00487E88 /* QuestionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataSource.swift; sourceTree = "<group>"; };
 		1F8923B32079677200487E88 /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
+		1F8923B520796C9700487E88 /* QuestionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionProvider.swift; sourceTree = "<group>"; };
 		26F42C335BFA87D495A16B2D /* Pods-GetSmart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetSmart.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetSmart/Pods-GetSmart.release.xcconfig"; sourceTree = "<group>"; };
 		969FF6AF87EA9FB3FEC09112 /* Pods-GetSmart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetSmart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetSmart/Pods-GetSmart.debug.xcconfig"; sourceTree = "<group>"; };
 		B36DA40038A40025AAC4F3E1 /* Pods_GetSmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetSmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +204,7 @@
 		1F8923AC2079640B00487E88 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				1F8923B520796C9700487E88 /* QuestionProvider.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				1F8923A220794F1700487E88 /* Question.swift in Sources */,
 				1F8923A52079509800487E88 /* Colors.swift in Sources */,
 				1F8923A82079602600487E88 /* QuestionViewController.swift in Sources */,
+				1F8923B620796C9700487E88 /* QuestionProvider.swift in Sources */,
 				1F8923702079435A00487E88 /* HomeViewController.swift in Sources */,
 				1F89239D20794D0800487E88 /* AnswerCollectionViewCell.swift in Sources */,
 				1F8923AA2079604A00487E88 /* GameResultsViewController.swift in Sources */,
@@ -615,7 +619,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDP24D6J8J;
 				INFOPLIST_FILE = GetSmart/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.small.jeff.GetSmart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -631,7 +638,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDP24D6J8J;
 				INFOPLIST_FILE = GetSmart/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.small.jeff.GetSmart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -647,7 +657,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDP24D6J8J;
 				INFOPLIST_FILE = GetSmartTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.small.jeff.GetSmartTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -664,7 +678,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDP24D6J8J;
 				INFOPLIST_FILE = GetSmartTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.small.jeff.GetSmartTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -680,7 +698,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDP24D6J8J;
 				INFOPLIST_FILE = GetSmartUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.small.jeff.GetSmartUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -696,7 +718,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDP24D6J8J;
 				INFOPLIST_FILE = GetSmartUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.small.jeff.GetSmartUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
