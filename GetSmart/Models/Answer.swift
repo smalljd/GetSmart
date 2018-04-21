@@ -6,8 +6,7 @@
 //  Copyright © 2018 Jeff Small. All rights reserved.
 //
 
-struct Answer {
+struct Answer: Codable {
     let text: String
-    let isCorrect: Bool
-    var isSelected: Bool
+    var isCorrect: Bool = false
 }
