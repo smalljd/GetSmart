@@ -10,26 +10,18 @@ import UIKit
 
 class GameResultsViewController: UIViewController {
 
+    @IBOutlet weak var numberCorrectLabel: UILabel!
+    @IBOutlet weak var numberTotalLabel: UILabel!
+    var questionManager: QuestionManager?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        numberCorrectLabel.text = String(describing: questionManager?.correctAnswersCount ?? 0)
+        numberTotalLabel.text = String(describing: questionManager?.totalQuestions ?? 0)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func didTapFinish(_ sender: Any) {
+        dismiss(animated: true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
