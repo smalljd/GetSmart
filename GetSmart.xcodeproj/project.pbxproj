@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F46579F208BF6B7003AA07A /* Array+GetSmart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46579E208BF6B7003AA07A /* Array+GetSmart.swift */; };
 		1F89236E2079435A00487E88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89236D2079435A00487E88 /* AppDelegate.swift */; };
 		1F8923702079435A00487E88 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89236F2079435A00487E88 /* HomeViewController.swift */; };
 		1F8923732079435A00487E88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F8923712079435A00487E88 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F46579E208BF6B7003AA07A /* Array+GetSmart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+GetSmart.swift"; sourceTree = "<group>"; };
 		1F89236A2079435A00487E88 /* GetSmart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetSmart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F89236D2079435A00487E88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F89236F2079435A00487E88 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F46579D208BF692003AA07A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1F46579E208BF6B7003AA07A /* Array+GetSmart.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1F8923612079435A00487E88 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 		1F89236C2079435A00487E88 /* GetSmart */ = {
 			isa = PBXGroup;
 			children = (
+				1F46579D208BF692003AA07A /* Extensions */,
 				1F8923A32079508E00487E88 /* Constants */,
 				1F8923AD2079644B00487E88 /* DataSources */,
 				1F8923B22079676200487E88 /* Managers */,
@@ -432,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8923AF2079647D00487E88 /* TriviaDataSource.swift in Sources */,
+				1F46579F208BF6B7003AA07A /* Array+GetSmart.swift in Sources */,
 				1F8923A220794F1700487E88 /* Question.swift in Sources */,
 				1F8923A52079509800487E88 /* Colors.swift in Sources */,
 				1F8923A82079602600487E88 /* QuestionViewController.swift in Sources */,
