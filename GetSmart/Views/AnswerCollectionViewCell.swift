@@ -12,14 +12,30 @@ class AnswerCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private weak var answerLabel: UILabel!
 
+    var answer: Answer?
+
     override func awakeFromNib() {
-        layer.cornerRadius = 5
+        super.awakeFromNib()
+
         layer.borderColor = Colors.darkBlue.cgColor
+        layer.borderWidth = 1
+        layer.cornerRadius = 5
     }
 
     func configure(from answer: Answer) {
+        self.answer = answer
         answerLabel.text = answer.text
-        layer.borderColor = answer.isSelected ? UIColor.white.cgColor : Colors.darkBlue.cgColor
-        backgroundColor = answer.isSelected ? Colors.darkBlue : UIColor.white
+    }
+
+    func select() {
+        layer.borderColor = UIColor.white.cgColor
+        backgroundColor = Colors.darkBlue
+        answerLabel.textColor = UIColor.white
+    }
+
+    func deselect() {
+        layer.borderColor = Colors.darkBlue.cgColor
+        backgroundColor = UIColor.white
+        answerLabel.textColor = Colors.darkBlue
     }
 }
