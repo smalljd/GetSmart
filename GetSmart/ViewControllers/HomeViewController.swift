@@ -9,17 +9,44 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    var questionProvider: QuestionProvider?
+    @IBOutlet weak var startGameButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        questionProvider = QuestionProvider()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func didTapStartGame(_ sender: Any) {
+        questionProvider?.fetchQuestions { [weak self] result in
+            guard let `self` = self else {
+                return
+            }
+
+            switch result {
+            case .success(let questions):
+                let dataSource = QuestionDataSource(questions: questions)
+                let questionManager = QuestionManager(dataSource: dataSource)
+                self.navigateToQuestionViewController(manager: questionManager)
+            case .failure(let error):
+                let alertController = UIAlertController(title: "Whoops", message: error.localizedDescription, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
     }
 
+    func navigateToQuestionViewController(manager: QuestionManager) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: QuestionViewController.self))
+        guard let nextQuestionViewController = storyboard.instantiateViewController(withIdentifier: String(describing: QuestionViewController.self)) as? QuestionViewController else {
+            assertionFailure("Could not locate the next question view controller.")
+            return
+        }
 
+        nextQuestionViewController.questionManager = manager
+        let questionNavigationController = UINavigationController(rootViewController: nextQuestionViewController)
+        present(questionNavigationController, animated: true)
+    }
 }
 
