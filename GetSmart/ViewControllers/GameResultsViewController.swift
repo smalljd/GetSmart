@@ -17,8 +17,20 @@ class GameResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        numberCorrectLabel.text = String(describing: questionManager?.correctAnswersCount ?? 0)
-        numberTotalLabel.text = String(describing: questionManager?.totalQuestions ?? 0)
+        guard let questionManager = questionManager else {
+            assertionFailure("Question Manager should not be nil.")
+            return
+        }
+
+        let numberOfQuestions = questionManager.questionAnswerLog.keys.count
+        let numberOfCorrectAnswers = questionManager
+            .questionAnswerLog
+            .values
+            .filter { $0.isCorrect }
+            .count
+
+        numberCorrectLabel.text = String(describing: numberOfCorrectAnswers)
+        numberTotalLabel.text = String(describing: numberOfQuestions)
     }
 
     @IBAction func didTapFinish(_ sender: Any) {
