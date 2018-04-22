@@ -18,7 +18,7 @@ struct QuestionDataSource: TriviaDataSource {
     }
 
     func question(at index: Int) -> Question? {
-        guard index >= 0, index < questions.count else {
+        guard (0 ..< questions.count).contains(index) else {
             assertionFailure("Question index out of bounds: \(index)")
             return nil
         }
