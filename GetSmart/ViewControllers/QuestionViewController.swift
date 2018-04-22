@@ -71,6 +71,11 @@ class QuestionViewController: UIViewController, UICollectionViewDataSource, UICo
         }
     }
 
+    @IBAction func didTapPreviousQuestion(_ sender: Any) {
+        questionManager?.goToPreviousQuestion()
+        navigationController?.popViewController(animated: true)
+    }
+
     func navigateToNextQuestion() {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: QuestionViewController.self))
         guard let nextQuestionViewController = storyboard.instantiateViewController(withIdentifier: String(describing: QuestionViewController.self)) as? QuestionViewController else {
