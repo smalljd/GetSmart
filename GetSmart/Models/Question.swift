@@ -39,6 +39,9 @@ struct Question: Codable, Equatable {
         self.difficulty = difficulty
         self.correctAnswer = correctAnswer
         self.incorrectAnswers = incorrectAnswers
+
+        hashValue = prompt.hashValue
+        debugDescription = "\n" + prompt
     }
 
     init(from decoder: Decoder) throws {
