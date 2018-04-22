@@ -47,13 +47,12 @@ class QuestionProvider {
                 let incorrectAnswers = question["incorrect_answers"] as? [String],
                 let correctAnswer = question["correct_answer"] as? String,
                 let prompt = question["question"] as? String {
-                let stringData = prompt.data(using: .utf8)
-                let stringJSON = try? JSONDecoder().decode(String.self, from: stringData ?? Data())
-                let correctAnswerMapped = Answer(text: correctAnswer, isCorrect: true)
-                let incorrectAnswersMapped = incorrectAnswers.map { Answer(text: $0, isCorrect: false) }
+                let sanitizedPrompt = sanitized(htmlString: prompt)
+                let correctAnswerMapped = Answer(text: sanitized(htmlString: correctAnswer), isCorrect: true)
+                let incorrectAnswersMapped = incorrectAnswers.map { Answer(text: sanitized(htmlString: $0), isCorrect: false) }
 
                 let newQuestion = Question(
-                    prompt: stringJSON ?? prompt, category: category,
+                    prompt: sanitizedPrompt, category: category,
                     difficulty: QuestionDifficulty(rawValue: difficulty) ?? .easy,
                     correctAnswer: correctAnswerMapped,
                     incorrectAnswers: incorrectAnswersMapped
@@ -66,5 +65,30 @@ class QuestionProvider {
         }
 
         return .success(results)
+    }
+
+    private func sanitized(htmlString: String) -> String {
+        var sanitizedString = htmlString
+        let stringReplacements: [String: String] = [
+            "&nbsp;": " ",
+            "&lt;": "<",
+            "&gt;": ">",
+            "&amp;": "&",
+            "&quot;": "\"",
+            "&apos;": "'",
+            "&#039;": "'",
+            "&copy;": "©",
+            "&reg;": "®",
+            "": "",
+        ]
+
+        for key in stringReplacements.keys {
+            if sanitizedString.contains(key) {
+                sanitizedString = sanitizedString.replacingOccurrences(of: key, with: stringReplacements[key] ?? "", options: .literal)
+                print("replacing \(key) with \(stringReplacements)")
+            }
+        }
+
+        return sanitizedString
     }
 }
