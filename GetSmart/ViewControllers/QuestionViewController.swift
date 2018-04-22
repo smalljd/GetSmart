@@ -63,7 +63,7 @@ class QuestionViewController: UIViewController, UICollectionViewDataSource, UICo
             return
         }
         questionManager.answerQuestion(question, answer: answer)
-        let finalIndex = (questionManager.dataSource?.numberOfQuestions() ?? 0) - 1
+        let finalIndex = (questionManager.dataSource?.numberOfQuestions() ?? 0)
         if questionManager.currentIndex >= finalIndex {
             navigateToResults()
         } else {
