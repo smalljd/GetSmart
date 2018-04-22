@@ -14,7 +14,10 @@ enum QuestionDifficulty: String, Codable {
     case hard
 }
 
-struct Question: Codable, Equatable {
+struct Question: Codable, CustomDebugStringConvertible, Equatable, Hashable {
+    var debugDescription: String
+    var hashValue: Int
+
     let prompt: String
     let category: String
     let difficulty: QuestionDifficulty
@@ -51,6 +54,8 @@ struct Question: Codable, Equatable {
         self.incorrectAnswers = try container.decode([Answer].self, forKey: .incorrectAnswers)
         self.correctAnswer = try container.decode(Answer.self, forKey: .correctAnswer)
         self.difficulty = try container.decode(QuestionDifficulty.self, forKey: .difficulty)
+        self.hashValue = self.prompt.hashValue
+        self.debugDescription = "\n" + prompt
     }
 
     var answers: [Answer] {
