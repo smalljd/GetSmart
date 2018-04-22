@@ -102,22 +102,22 @@
             </objects>
             <point key="canvasLocation" x="1056.8" y="118.29085457271366"/>
         </scene>
-        <!--Question 1-->
+        <!--Question-->
         <scene sceneID="9ko-XP-rSJ">
             <objects>
-                <viewController storyboardIdentifier="QuestionViewController" id="IcF-z9-PFm" customClass="QuestionViewController" customModule="GetSmart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestionViewController" title="Question" id="IcF-z9-PFm" customClass="QuestionViewController" customModule="GetSmart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YEX-1m-NiH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oI-SU-hHk">
-                                <rect key="frame" x="14" y="40" width="341" height="28"/>
+                                <rect key="frame" x="14" y="84" width="341" height="28"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6w-Mg-0S4">
-                                <rect key="frame" x="16" y="76" width="343" height="125.5"/>
+                                <rect key="frame" x="16" y="120" width="343" height="125.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration" identifier="questionLabel"/>
                                 <constraints>
@@ -128,13 +128,13 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Jv-v7-9ub">
-                                <rect key="frame" x="16" y="209.5" width="339" height="28"/>
+                                <rect key="frame" x="16" y="253.5" width="339" height="28"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zbo-8b-M5S">
-                                <rect key="frame" x="12" y="245.5" width="351" height="351.5"/>
+                                <rect key="frame" x="12" y="289.5" width="351" height="307.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fYh-gz-MjC">
                                     <size key="itemSize" width="161" height="53"/>
@@ -223,7 +223,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cUL-Bf-ZUj"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Question 1" id="gCD-BG-Gu6"/>
+                    <navigationItem key="navigationItem" title="Title" id="qb5-xL-3Ud">
+                        <barButtonItem key="leftBarButtonItem" title="Previous" id="fbk-bE-Hrj">
+                            <connections>
+                                <action selector="didTapPreviousQuestion:" destination="IcF-z9-PFm" id="7Ym-n9-RrK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="answerCollectionView" destination="Zbo-8b-M5S" id="XqT-bJ-tc1"/>
                         <outlet property="questionTextView" destination="F6w-Mg-0S4" id="Xq8-k7-Jvx"/>
@@ -231,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8YX-TJ-W4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1797.5999999999999" y="116.49175412293854"/>
+            <point key="canvasLocation" x="1775" y="116"/>
         </scene>
         <!--Your Score-->
         <scene sceneID="il1-rJ-fP5">
@@ -341,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nps-JV-OZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2501.5999999999999" y="115.59220389805098"/>
+            <point key="canvasLocation" x="2479" y="118"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EWg-3g-5cG">
@@ -360,6 +366,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucx-Dl-gv0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="337" y="118"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LJt-cK-kbi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZgB-gA-Cud" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qBl-5q-nCw">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IcF-z9-PFm" kind="relationship" relationship="rootViewController" id="pb8-p5-QuE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bNT-4T-vc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774" y="-591"/>
         </scene>
     </scenes>
     <resources>
