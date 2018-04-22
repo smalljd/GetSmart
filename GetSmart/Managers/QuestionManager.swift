@@ -7,6 +7,7 @@
 //
 
 class QuestionManager {
+    var questionAnswerLog = [Question: Answer]()
     var correctAnswersCount = 0
     var currentIndex = 0
     var dataSource: TriviaDataSource?
@@ -20,17 +21,20 @@ class QuestionManager {
     convenience init(dataSource: TriviaDataSource) {
         self.init()
         self.dataSource = dataSource
+
+        for index in 0 ..< dataSource.numberOfQuestions() {
+            if let question = dataSource.question(at: index) {
+                questionAnswerLog[question] = nil
+            }
+        }
     }
 
     func answerQuestion(_ question: Question, answer: Answer) {
-        defer {
-            currentIndex += 1
-        }
+        questionAnswerLog[question] = answer
+        currentIndex += 1
+    }
 
-        guard let dataSource = dataSource, answer.text == dataSource.correctAnswer(for: question)?.text else {
-            return
-        }
-
-        correctAnswersCount += 1
+    func goToPreviousQuestion() {
+        currentIndex -= 1
     }
 }
