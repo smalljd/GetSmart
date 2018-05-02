@@ -85,7 +85,6 @@ class QuestionProvider {
         for key in stringReplacements.keys {
             if sanitizedString.contains(key) {
                 sanitizedString = sanitizedString.replacingOccurrences(of: key, with: stringReplacements[key] ?? "", options: .literal)
-                print("replacing \(key) with \(stringReplacements)")
             }
         }
 
