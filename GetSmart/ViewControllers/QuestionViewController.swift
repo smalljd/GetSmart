@@ -8,17 +8,21 @@
 
 import UIKit
 
+enum DismissalType {
+    case dismiss
+    case pop
+}
+
 class QuestionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var answerCollectionView: UICollectionView!
     @IBOutlet weak var questionTextView: UITextView!
 
-    var question: Question?
     var answers = [Answer]()
-    var selectedAnswer: Answer?
-
     var cells = [Int: AnswerCollectionViewCell]()
-
+    var dismissalType: DismissalType = .pop
+    var question: Question?
     var questionManager: QuestionManager?
+    var selectedAnswer: Answer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +50,29 @@ class QuestionViewController: UIViewController, UICollectionViewDataSource, UICo
         answers = currentQuestion?.answers.shuffled() ?? []
         navigationItem.title = currentQuestion?.prompt
         questionTextView.text = currentQuestion?.prompt ?? ""
+        configureNavigationBar()
     }
 
+    private func configureNavigationBar() {
+        title = "Question \((questionManager?.currentIndex ?? 0) + 1)"
+        configureDismissalButton(for: dismissalType)
+    }
+
+    private func configureDismissalButton(for type: DismissalType) {
+        switch type {
+        case .dismiss:
+            let dismissalButton = UIBarButtonItem(title: "Quit", style: .plain, target: self, action: #selector(dismissQuestions))
+            navigationItem.setLeftBarButton(dismissalButton, animated: false)
+        case .pop:
+            let previousButton = UIBarButtonItem(title: "Previous", style: .plain, target: self, action: #selector(didTapPreviousQuestion(_:)))
+            navigationItem.setLeftBarButton(previousButton, animated: false)
+        }
+    }
+
+    @objc
+    private func dismissQuestions() {
+        navigationController?.dismiss(animated: true)
+    }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
