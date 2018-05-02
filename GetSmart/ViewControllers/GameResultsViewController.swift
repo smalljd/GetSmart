@@ -31,6 +31,7 @@ class GameResultsViewController: UIViewController {
 
         numberCorrectLabel.text = String(describing: numberOfCorrectAnswers)
         numberTotalLabel.text = String(describing: numberOfQuestions)
+        navigationItem.hidesBackButton = true
     }
 
     @IBAction func didTapFinish(_ sender: Any) {
