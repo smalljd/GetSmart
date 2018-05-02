@@ -45,6 +45,7 @@ class HomeViewController: UIViewController {
         }
 
         nextQuestionViewController.questionManager = manager
+        nextQuestionViewController.dismissalType = .dismiss
         let questionNavigationController = UINavigationController(rootViewController: nextQuestionViewController)
         present(questionNavigationController, animated: true)
     }
