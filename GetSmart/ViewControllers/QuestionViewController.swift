@@ -83,10 +83,20 @@ class QuestionViewController: UIViewController, UICollectionViewDataSource, UICo
     }
 
     @IBAction func didTapNextQuestion(_ sender: Any) {
-        guard let questionManager = questionManager, let question = question, let answer = selectedAnswer else {
+        guard let answer = selectedAnswer else {
+            let alertController = UIAlertController(title: "Forget Something?", message: "Please select an answer before proceding to the next question.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Got it", style: .default, handler: nil)
+            alertController.addAction(okAction)
+
+            present(alertController, animated: true)
+            return
+        }
+
+        guard let questionManager = questionManager, let question = question else {
             assertionFailure("Something went wrong.")
             return
         }
+
         questionManager.answerQuestion(question, answer: answer)
         let finalIndex = (questionManager.dataSource?.numberOfQuestions() ?? 0)
         if questionManager.currentIndex >= finalIndex {
