@@ -12,7 +12,7 @@ typealias JSON = [String: Any]
 typealias FetchQuestionsCompletion = (Result<[Question]>) -> Void
 
 class QuestionProvider {
-    let urlString = "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple"
+    let urlString = "https://opentdb.com/api.php?amount=3&category=18&difficulty=medium&type=multiple"
     func fetchQuestions(completionHandler: @escaping FetchQuestionsCompletion) {
         Alamofire.request(urlString).responseJSON(queue: DispatchQueue.main, options: .allowFragments) { [weak self] response in
             guard let `self` = self else {
